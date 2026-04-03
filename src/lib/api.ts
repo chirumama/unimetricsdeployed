@@ -1,13 +1,25 @@
 const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000';
 
 async function apiFetch<T>(path: string, options: RequestInit = {}) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...(options.headers as Record<string, string>),
-    },
-    ...options,
-  });
+  let res: Response;
+  const headers = new Headers(options.headers ?? {});
+  const isFormData = typeof FormData !== 'undefined' && options.body instanceof FormData;
+
+  if (!isFormData && !headers.has('Content-Type')) {
+    headers.set('Content-Type', 'application/json');
+  }
+
+  try {
+    res = await fetch(`${API_BASE}${path}`, {
+      headers,
+      ...options,
+    });
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : 'unknown network error';
+    throw new Error(
+      `Unable to reach the API at ${API_BASE}. Configure VITE_API_BASE_URL for your deployed frontend. (${reason})`
+    );
+  }
 
   if (!res.ok) {
     const text = await res.text();
@@ -188,6 +200,22 @@ export type ResultMark = {
   facultyId: string;
   semester: number;
   className: string;
+};
+
+export type StudyMaterial = {
+  id: string;
+  title: string;
+  description: string;
+  className: string;
+  subject: string;
+  uploadedById: string;
+  uploadedByName: string;
+  uploadedByRole: 'admin' | 'faculty';
+  fileName: string;
+  filePath: string;
+  mimeType: string;
+  fileSize: number;
+  createdAt: string;
 };
 
 export async function getAcademicYear() {
@@ -427,5 +455,46 @@ export async function saveResultMark(
 export async function publishResultSubject(id: string) {
   return apiFetch<ResultSubject>(`/api/results/subjects/${id}/publish`, {
     method: 'POST',
+  });
+}
+
+export async function listStudyMaterials(role: Role, userId: string) {
+  const query = new URLSearchParams({ role, userId });
+  return apiFetch<StudyMaterial[]>(`/api/materials?${query.toString()}`);
+}
+
+export async function uploadStudyMaterial(input: {
+  title: string;
+  description: string;
+  className: string;
+  subject: string;
+  uploadedById: string;
+  uploadedByRole: 'admin' | 'faculty';
+  file: File;
+}) {
+  const formData = new FormData();
+  formData.append('title', input.title);
+  formData.append('description', input.description);
+  formData.append('className', input.className);
+  formData.append('subject', input.subject);
+  formData.append('uploadedById', input.uploadedById);
+  formData.append('uploadedByRole', input.uploadedByRole);
+  formData.append('file', input.file);
+
+  return apiFetch<StudyMaterial>('/api/materials', {
+    method: 'POST',
+    body: formData,
+  });
+}
+
+export async function getStudyMaterialAccessUrl(id: string, role: Role, userId: string) {
+  const query = new URLSearchParams({ role, userId });
+  return apiFetch<{ signedUrl: string; bucket: string }>(`/api/materials/${id}/access-url?${query.toString()}`);
+}
+
+export async function deleteStudyMaterial(id: string, userId: string, role: 'admin' | 'faculty') {
+  return apiFetch<void>(`/api/materials/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ userId, role }),
   });
 }

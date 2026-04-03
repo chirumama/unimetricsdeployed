@@ -25,7 +25,8 @@ The backend currently persists the full app snapshot into Supabase table `public
 1. Run the SQL in [server/supabase-schema.sql](/d:/Project%20Files/Unimetric/server/supabase-schema.sql)
 2. Set `USE_SUPABASE=true`
 3. Add `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and `SUPABASE_SERVICE_ROLE_KEY`
-4. Sync local seed data:
+4. Add `SUPABASE_STORAGE_BUCKET=classroombucket` for uploaded notes/materials
+5. Sync local seed data:
    `npm run migrate:supabase`
 
 For the first normalization phase, you can also run [server/supabase-relational-schema.sql](/d:/Project%20Files/Unimetric/server/supabase-relational-schema.sql) to create real tables like `students`, `faculty`, `attendance_sessions`, `notices`, and `result_marks` from the `app_state` snapshot.
@@ -55,6 +56,7 @@ SPA routing is already handled by [vercel.json](/d:/Project%20Files/Unimetric/ve
    `SUPABASE_URL=...`
    `SUPABASE_ANON_KEY=...`
    `SUPABASE_SERVICE_ROLE_KEY=...`
+   `SUPABASE_STORAGE_BUCKET=classroombucket`
 
 Health check endpoint:
 `/api/health`

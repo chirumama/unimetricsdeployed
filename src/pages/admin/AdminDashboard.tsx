@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ArrowDownRight, ArrowUpRight, DollarSign, GraduationCap, TrendingUp, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowDownRight, ArrowRight, ArrowUpRight, BookOpen, DollarSign, GraduationCap, TrendingUp, Users } from 'lucide-react';
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { getFinance, listAttendance, listFaculty, listStudents, type AttendanceSession, type Faculty, type FinanceData, type Student } from '@/lib/api';
@@ -123,6 +124,28 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
       </div>
+
+      <Card className="border-indigo-100 bg-gradient-to-r from-indigo-50 via-white to-sky-50">
+        <CardHeader className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-1">
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <BookOpen className="h-5 w-5 text-indigo-600" />
+              Add New Subject
+            </CardTitle>
+            <CardDescription>
+              Create or update subjects for a class from Academic Year management so they become available across timetable,
+              faculty assignment, and attendance flows.
+            </CardDescription>
+          </div>
+          <Link
+            to="/admin/academic-year"
+            className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-700"
+          >
+            Open Subject Setup
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </CardHeader>
+      </Card>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">

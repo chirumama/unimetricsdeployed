@@ -34,7 +34,12 @@ export default function Login() {
       navigate(from ?? getDefaultRouteForRole(response.user.role), { replace: true });
     } catch (loginError) {
       console.error('Login failed', loginError);
-      setError('Invalid username or password.');
+      const message = loginError instanceof Error ? loginError.message : 'Login failed.';
+      if (message.includes('Unable to reach the API')) {
+        setError('Server connection failed. Please check the deployed backend URL.');
+      } else {
+        setError('Invalid username or password.');
+      }
     } finally {
       setLoading(false);
     }

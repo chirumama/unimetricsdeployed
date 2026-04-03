@@ -46,6 +46,7 @@ function normalizeDB(parsed: DB): DB {
     doubts: parsed.doubts ?? [],
     resultSubjects: parsed.resultSubjects ?? [],
     resultMarks: parsed.resultMarks ?? [],
+    studyMaterials: parsed.studyMaterials ?? [],
   };
 }
 
@@ -76,9 +77,14 @@ function createSupabaseAdminClient(): SupabaseClient | null {
 }
 
 const supabase = createSupabaseAdminClient();
+const STORAGE_BUCKET = process.env.SUPABASE_STORAGE_BUCKET ?? 'classroombucket';
 
 export function isSupabaseEnabled() {
   return Boolean(supabase);
+}
+
+export function getStorageBucketName() {
+  return STORAGE_BUCKET;
 }
 
 function isMissingTableError(error: { code?: string; message?: string } | null) {
@@ -153,4 +159,45 @@ export async function ensureSupabaseSeededFromLocalFile(): Promise<DB | null> {
   const local = await readLocalDBFile();
   const stored = await pushSupabaseSnapshot(local);
   return stored ? local : null;
+}
+
+export async function uploadFileToStorage(path: string, file: Buffer, contentType: string) {
+  if (!supabase) {
+    throw new Error('Supabase storage is not configured.');
+  }
+
+  const { error } = await supabase.storage.from(STORAGE_BUCKET).upload(path, file, {
+    contentType,
+    upsert: false,
+  });
+
+  if (error) {
+    throw error;
+  }
+}
+
+export async function removeFileFromStorage(path: string) {
+  if (!supabase) {
+    throw new Error('Supabase storage is not configured.');
+  }
+
+  const { error } = await supabase.storage.from(STORAGE_BUCKET).remove([path]);
+
+  if (error) {
+    throw error;
+  }
+}
+
+export async function createSignedStorageUrl(path: string, expiresIn = 60 * 60) {
+  if (!supabase) {
+    throw new Error('Supabase storage is not configured.');
+  }
+
+  const { data, error } = await supabase.storage.from(STORAGE_BUCKET).createSignedUrl(path, expiresIn);
+
+  if (error) {
+    throw error;
+  }
+
+  return data.signedUrl;
 }

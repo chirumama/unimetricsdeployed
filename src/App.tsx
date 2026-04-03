@@ -15,8 +15,10 @@ import FinancePage from './pages/admin/FinancePage';
 import FacultyDashboard from './pages/faculty/FacultyDashboard';
 import StudentManagement from './pages/faculty/StudentManagement';
 import FacultyAttendance from './pages/faculty/FacultyAttendance';
+import FacultyMaterials from './pages/faculty/FacultyMaterials';
 import StudentDashboard from './pages/student/StudentDashboard';
 import StudentAttendance from './pages/student/StudentAttendance';
+import StudentSubjects from './pages/student/StudentSubjects';
 import TimetablePage from './pages/shared/TimetablePage';
 import NoticePage from './pages/shared/NoticePage';
 import DoubtFeedbackPage from './pages/shared/DoubtFeedbackPage';
@@ -51,7 +53,7 @@ export default function App() {
             <Route path="students" element={<StudentManagement />} />
             <Route path="attendance" element={<FacultyAttendance />} />
             <Route path="marks" element={<ResultsPage />} />
-            <Route path="materials" element={<PlaceholderPage />} />
+            <Route path="materials" element={<FacultyMaterials />} />
             <Route path="doubts" element={<DoubtFeedbackPage />} />
             <Route path="timetable" element={<TimetablePage />} />
             <Route path="notices" element={<NoticePage />} />
@@ -63,7 +65,7 @@ export default function App() {
           <Route path="/student" element={<Layout />}>
             <Route index element={<StudentDashboard />} />
             <Route path="timetable" element={<TimetablePage />} />
-            <Route path="subjects" element={<PlaceholderPage />} />
+            <Route path="subjects" element={<StudentSubjects />} />
             <Route path="attendance" element={<StudentAttendance />} />
             <Route path="doubts" element={<DoubtFeedbackPage />} />
             <Route path="results" element={<ResultsPage />} />

@@ -161,6 +161,22 @@ export interface ResultMark {
   className: string;
 }
 
+export interface StudyMaterial {
+  id: string;
+  title: string;
+  description: string;
+  className: string;
+  subject: string;
+  uploadedById: string;
+  uploadedByName: string;
+  uploadedByRole: 'admin' | 'faculty';
+  fileName: string;
+  filePath: string;
+  mimeType: string;
+  fileSize: number;
+  createdAt: string;
+}
+
 export interface DB {
   academicYear: AcademicYear;
   faculty: Faculty[];
@@ -173,6 +189,7 @@ export interface DB {
   doubts: DoubtFeedback[];
   resultSubjects: ResultSubject[];
   resultMarks: ResultMark[];
+  studyMaterials: StudyMaterial[];
 }
 
 export async function readDB(): Promise<DB> {

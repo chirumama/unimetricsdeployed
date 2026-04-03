@@ -1,289 +1,510 @@
 {
-  "academicYear": {
-    "id": "ay-1",
-    "year": "2025-2026",
-    "isActive": true,
-    "classes": [
-      {
-        "id": "cls-1",
-        "name": "First Year (FY)",
-        "divisions": [
-          "A",
-          "B",
-          "C"
-        ],
-        "totalStudents": 180,
-        "subjects": [
-          "Data Structures",
-          "Algorithms",
-          "Web Service"
-        ],
-        "facultyId": "F001"
-      },
-      {
-        "id": "cls-2",
-        "name": "Second Year (SY)",
-        "divisions": [
-          "A",
-          "B"
-        ],
-        "totalStudents": 120,
-        "subjects": [
-          "Database Systems",
-          "Software Engineering"
-        ],
-        "facultyId": "F002"
-      },
-      {
-        "id": "cls-3",
-        "name": "Third Year (TY)",
-        "divisions": [
-          "A",
-          "B"
-        ],
-        "totalStudents": 115,
-        "subjects": [
-          "Web Dev",
-          "Database Systems"
-        ],
-        "facultyId": "F001"
-      },
-      {
-        "id": "979275c3-03f4-4d80-acaf-8d6eadccd1fa",
-        "name": "B.S.c CS",
-        "divisions": [
-          "A"
-        ],
-        "totalStudents": 100,
-        "subjects": [
-          "Database Systems",
-          "Web Dev",
-          "Software Engineering"
-        ],
-        "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965"
-      }
-    ]
-  },
+  "doubts": [
+    {
+      "id": "doubt-1",
+      "type": "doubt",
+      "title": "Need help with linked list assignment",
+      "message": "I am stuck in the insertion logic for the circular linked list question. Can you guide me?",
+      "subject": "Data Structures",
+      "className": "FY-A",
+      "createdAt": "2026-03-15T08:00:00.000Z",
+      "studentId": "S001",
+      "teacherId": "F001",
+      "studentName": "Alice Johnson",
+      "teacherName": "Dr. Sarah Smith"
+    },
+    {
+      "id": "doubt-2",
+      "type": "feedback",
+      "title": "Need more revision examples",
+      "message": "The last database practical was helpful. It would be great to get 2 more normalization examples before the next lab.",
+      "subject": "Database Systems",
+      "className": "TY-A",
+      "createdAt": "2026-03-15T09:30:00.000Z",
+      "studentId": "S004",
+      "teacherId": "F002",
+      "studentName": "Diana Prince",
+      "teacherName": "Prof. John Doe"
+    },
+    {
+      "id": "14c284e7-4705-4534-82e8-d43faa92eca9",
+      "type": "doubt",
+      "title": "Practical 1",
+      "message": "Please provide a guide to install Ubuntu WSL",
+      "subject": "Web Dev",
+      "className": "B.S.c CS-A",
+      "createdAt": "2026-03-15T16:12:55.098Z",
+      "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528",
+      "teacherId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "studentName": "Diksha Pimple",
+      "teacherName": "Ahinsa Pimple"
+    },
+    {
+      "id": "56babefb-02b7-4d8b-a34f-106afc085fb5",
+      "type": "feedback",
+      "title": "Good",
+      "message": "Your teaching is awesome 💯",
+      "subject": "Web Service",
+      "className": "B.S.c CS-A",
+      "createdAt": "2026-03-16T08:49:53.277Z",
+      "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528",
+      "teacherId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "studentName": "Diksha Pimple",
+      "teacherName": "Pooja Amin"
+    }
+  ],
   "faculty": [
     {
       "id": "F001",
-      "name": "Dr. Sarah Smith",
-      "username": "sarah.s",
-      "password": "12345678",
       "dob": "1980-05-15",
+      "name": "Dr. Sarah Smith",
+      "classes": [
+        "FY-A",
+        "SY-B"
+      ],
+      "password": "12345678",
       "subjects": [
         "Data Structures",
         "Algorithms"
       ],
-      "classes": [
-        "FY-A",
-        "SY-B"
-      ]
+      "username": "sarah.s"
     },
     {
       "id": "F002",
-      "name": "Prof. John Doe",
-      "username": "john.d",
-      "password": "12345678",
       "dob": "1975-11-22",
+      "name": "Prof. John Doe",
+      "classes": [
+        "TY-A"
+      ],
+      "password": "12345678",
       "subjects": [
         "Database Systems"
       ],
-      "classes": [
-        "TY-A"
-      ]
+      "username": "john.d"
     },
     {
       "id": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "name": "Ms Karishma Jain",
-      "username": "karishma",
-      "password": "12345678",
       "dob": "1980-01-01",
-      "subjects": [
-        "Web Service"
-      ],
+      "name": "Ms Karishma Jain",
       "classes": [
         "FY-A",
         "SY-B",
         "B.S.c CS-A"
-      ]
+      ],
+      "password": "12345678",
+      "subjects": [
+        "Web Service"
+      ],
+      "username": "karishma"
     },
     {
       "id": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "name": "Ahinsa Pimple",
-      "username": "ahinsa",
-      "password": "12345678",
       "dob": "2001-01-01",
+      "name": "Ahinsa Pimple",
+      "classes": [
+        "FY-A",
+        "B.S.c CS-A"
+      ],
+      "password": "12345678",
       "subjects": [
         "Data Structures",
         "Web Dev",
         "Database Systems"
       ],
-      "classes": [
-        "FY-A",
-        "B.S.c CS-A"
-      ]
+      "username": "ahinsa"
     },
     {
       "id": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "name": "Pooja Amin",
-      "username": "amin",
-      "password": "12345678",
       "dob": "",
-      "subjects": [
-        "Web Service"
-      ],
+      "name": "Pooja Amin",
       "classes": [
         "B.S.c CS-A",
         "SY-A",
         "FY-A"
-      ]
+      ],
+      "password": "12345678",
+      "subjects": [
+        "Web Service"
+      ],
+      "username": "amin"
+    },
+    {
+      "id": "317f9d99-d18d-4029-8c1d-821be6e41f9c",
+      "dob": "1990-02-01",
+      "name": "Mrs Namrata Shinde",
+      "classes": [
+        "B.S.c CS-A"
+      ],
+      "password": "12345678",
+      "subjects": [
+        "Software Engineering"
+      ],
+      "username": "namrata"
+    },
+    {
+      "id": "5ba8d778-b257-49e4-9e2e-3e874396d37c",
+      "dob": "1998-05-20",
+      "name": "Ms. SOPHIA Dcruz",
+      "classes": [
+        "Msc cs-A",
+        "B.S.c CS-A"
+      ],
+      "password": "sophia@",
+      "subjects": [
+        "Web Dev",
+        "Data Structures",
+        "Database Systems"
+      ],
+      "username": "sophia"
+    }
+  ],
+  "finance": {
+    "revenues": [
+      {
+        "id": "rev-1",
+        "note": "Semester examination registrations",
+        "title": "Exam Fees Collection",
+        "amount": 165000,
+        "category": "exam-fees",
+        "receivedOn": "2026-03-02"
+      },
+      {
+        "id": "rev-2",
+        "note": "Donations pledged for digital classroom upgrade",
+        "title": "Alumni Donation Drive",
+        "amount": 250000,
+        "category": "donation",
+        "receivedOn": "2026-03-07"
+      },
+      {
+        "id": "rev-3",
+        "note": "Research lab modernization grant",
+        "title": "State Innovation Grant",
+        "amount": 400000,
+        "category": "grant",
+        "receivedOn": "2026-03-10"
+      }
+    ],
+    "expenses": [
+      {
+        "id": "exp-1",
+        "note": "March salary payout",
+        "title": "Faculty Salary - Dr. Sarah Smith",
+        "amount": 72000,
+        "paidTo": "Dr. Sarah Smith",
+        "dueDate": "2026-03-31",
+        "category": "salary",
+        "frequency": "monthly"
+      },
+      {
+        "id": "exp-2",
+        "note": "March salary payout",
+        "title": "Faculty Salary - Prof. John Doe",
+        "amount": 76000,
+        "paidTo": "Prof. John Doe",
+        "dueDate": "2026-03-31",
+        "category": "salary",
+        "frequency": "monthly"
+      },
+      {
+        "id": "exp-3",
+        "note": "March salary payout",
+        "title": "Faculty Salary - Ms Karishma Jain",
+        "amount": 68000,
+        "paidTo": "Ms Karishma Jain",
+        "dueDate": "2026-03-31",
+        "category": "salary",
+        "frequency": "monthly"
+      },
+      {
+        "id": "exp-4",
+        "note": "Academic block and labs",
+        "title": "Main Campus Electricity Bill",
+        "amount": 54000,
+        "paidTo": "State Electricity Board",
+        "dueDate": "2026-03-20",
+        "category": "utilities",
+        "frequency": "monthly"
+      },
+      {
+        "id": "exp-5",
+        "note": "High-speed internet and learning suite",
+        "title": "Internet and LMS Subscription",
+        "amount": 18500,
+        "paidTo": "CampusNet Services",
+        "dueDate": "2026-03-25",
+        "category": "operations",
+        "frequency": "monthly"
+      },
+      {
+        "id": "exp-6",
+        "note": "Quarterly upkeep for labs",
+        "title": "Lab Maintenance Contract",
+        "amount": 32000,
+        "paidTo": "TechFix Engineering",
+        "dueDate": "2026-03-28",
+        "category": "maintenance",
+        "frequency": "quarterly"
+      },
+      {
+        "id": "152caca1-9c57-46da-9541-68a9476da35d",
+        "note": "",
+        "title": "computer required ",
+        "amount": 20000,
+        "paidTo": "chirag computer service ",
+        "dueDate": "2026-03-16",
+        "category": "other",
+        "frequency": "one-time"
+      }
+    ]
+  },
+  "notices": [
+    {
+      "id": "notice-1",
+      "title": "Internal Assessment Schedule",
+      "message": "Internal assessment for FY-A will be held on Monday in Classroom 101. Carry your lab journal.",
+      "subject": "Data Structures",
+      "authorId": "F001",
+      "createdAt": "2026-03-14T08:30:00.000Z",
+      "updatedAt": "2026-03-14T08:30:00.000Z",
+      "authorName": "Dr. Sarah Smith",
+      "authorRole": "faculty",
+      "classNames": [
+        "FY-A"
+      ],
+      "targetScope": "class"
+    },
+    {
+      "id": "notice-2",
+      "title": "Seminar Hall Maintenance",
+      "message": "All classes are informed that the seminar hall will remain closed today due to electrical maintenance.",
+      "subject": "",
+      "authorId": "admin-1",
+      "createdAt": "2026-03-13T10:00:00.000Z",
+      "updatedAt": "2026-03-13T10:00:00.000Z",
+      "authorName": "Kuldeep Yadav",
+      "authorRole": "admin",
+      "classNames": [],
+      "targetScope": "all"
+    },
+    {
+      "id": "notice-3",
+      "title": "Database Systems Practical",
+      "message": "TY-A students should submit the ER diagram before tomorrow's practical session.",
+      "subject": "Database Systems",
+      "authorId": "F002",
+      "createdAt": "2026-03-12T12:15:00.000Z",
+      "updatedAt": "2026-03-12T12:15:00.000Z",
+      "authorName": "Prof. John Doe",
+      "authorRole": "faculty",
+      "classNames": [
+        "TY-A"
+      ],
+      "targetScope": "class"
+    },
+    {
+      "id": "notice-4",
+      "title": "Exam Fee Deadline",
+      "message": "SY-B students must clear pending exam fees by Friday to avoid late charges.",
+      "subject": "",
+      "authorId": "admin-1",
+      "createdAt": "2026-03-11T09:00:00.000Z",
+      "updatedAt": "2026-03-11T09:00:00.000Z",
+      "authorName": "Kuldeep Yadav",
+      "authorRole": "admin",
+      "classNames": [
+        "SY-B"
+      ],
+      "targetScope": "class"
+    },
+    {
+      "id": "de3d5d95-89a9-4c4a-90e3-2673175db033",
+      "title": "Bring DS Journal",
+      "message": "everyone bring",
+      "subject": "Web Dev",
+      "authorId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "createdAt": "2026-03-15T14:16:08.158Z",
+      "updatedAt": "2026-03-15T14:16:08.158Z",
+      "authorName": "Ahinsa Pimple",
+      "authorRole": "faculty",
+      "classNames": [
+        "B.S.c CS-A"
+      ],
+      "targetScope": "class"
+    },
+    {
+      "id": "b2143a7d-a62c-4d3e-9deb-959e5430f81e",
+      "title": "Exam Notice",
+      "message": "All should submit documents till the end of this week",
+      "subject": "",
+      "authorId": "admin-1",
+      "createdAt": "2026-03-15T23:02:40.469Z",
+      "updatedAt": "2026-03-15T23:02:40.469Z",
+      "authorName": "Kuldeep Yadav",
+      "authorRole": "admin",
+      "classNames": [],
+      "targetScope": "all"
+    },
+    {
+      "id": "2d43bfa7-1cc6-4f78-8058-ace0cd929d64",
+      "title": "event starting ",
+      "message": "ubuntu starting from 1may to 10 may ",
+      "subject": "",
+      "authorId": "admin-1",
+      "createdAt": "2026-03-16T08:10:18.032Z",
+      "updatedAt": "2026-03-16T08:10:18.032Z",
+      "authorName": "Kuldeep Yadav",
+      "authorRole": "admin",
+      "classNames": [
+        "B.S.c CS-A"
+      ],
+      "targetScope": "class"
     }
   ],
   "students": [
     {
       "id": "S001",
       "name": "Alice Johnson",
-      "username": "alice.j",
-      "password": "12345678",
       "class": "FY-A",
       "rollNo": "101",
-      "feePaid": 85000
+      "feePaid": 85000,
+      "password": "12345678",
+      "username": "alice.j"
     },
     {
       "id": "S002",
       "name": "Bob Smith",
-      "username": "bob.s",
-      "password": "12345678",
       "class": "FY-A",
       "rollNo": "102",
-      "feePaid": 85000
+      "feePaid": 85000,
+      "password": "12345678",
+      "username": "bob.s"
     },
     {
       "id": "S003",
       "name": "Charlie Davis",
-      "username": "charlie.d",
-      "password": "12345678",
       "class": "SY-B",
       "rollNo": "201",
-      "feePaid": 92000
+      "feePaid": 92000,
+      "password": "12345678",
+      "username": "charlie.d"
     },
     {
       "id": "S004",
       "name": "Diana Prince",
-      "username": "diana.p",
-      "password": "12345678",
       "class": "TY-A",
       "rollNo": "301",
-      "feePaid": 98000
+      "feePaid": 98000,
+      "password": "12345678",
+      "username": "diana.p"
     },
     {
       "id": "f795562f-3fe9-4819-b30e-4eb8a754c528",
       "name": "Diksha Pimple",
-      "username": "diksha",
-      "password": "12345678",
       "class": "B.S.c CS-A",
       "rollNo": "102",
-      "feePaid": 90000
+      "feePaid": 90000,
+      "password": "12345678",
+      "username": "diksha"
     },
     {
       "id": "24ea82e8-438d-4ab6-b0bd-88520ba1d844",
       "name": "rohan solanki",
-      "username": "rohan",
-      "password": "12345678",
       "class": "B.S.c CS-A",
       "rollNo": "123",
-      "feePaid": 90000
+      "feePaid": 90000,
+      "password": "12345678",
+      "username": "rohan"
     },
     {
       "id": "S005",
       "name": "Nisha Patil",
-      "username": "nisha.p",
-      "password": "12345678",
       "class": "FY-A",
       "rollNo": "103",
-      "feePaid": 85000
+      "feePaid": 85000,
+      "password": "12345678",
+      "username": "nisha.p"
     },
     {
       "id": "S006",
       "name": "Rahul More",
-      "username": "rahul.m",
-      "password": "12345678",
       "class": "FY-A",
       "rollNo": "104",
-      "feePaid": 85000
+      "feePaid": 85000,
+      "password": "12345678",
+      "username": "rahul.m"
     },
     {
       "id": "S007",
       "name": "Sneha Kulkarni",
-      "username": "sneha.k",
-      "password": "12345678",
       "class": "SY-B",
       "rollNo": "202",
-      "feePaid": 92000
+      "feePaid": 92000,
+      "password": "12345678",
+      "username": "sneha.k"
     },
     {
       "id": "S008",
       "name": "Tanmay Joshi",
-      "username": "tanmay.j",
-      "password": "12345678",
       "class": "SY-B",
       "rollNo": "203",
-      "feePaid": 92000
+      "feePaid": 92000,
+      "password": "12345678",
+      "username": "tanmay.j"
     },
     {
       "id": "S009",
       "name": "Isha Shah",
-      "username": "isha.s",
-      "password": "12345678",
       "class": "TY-A",
       "rollNo": "302",
-      "feePaid": 98000
+      "feePaid": 98000,
+      "password": "12345678",
+      "username": "isha.s"
     },
     {
       "id": "S010",
       "name": "Vikram Nair",
-      "username": "vikram.n",
-      "password": "12345678",
       "class": "TY-A",
       "rollNo": "303",
-      "feePaid": 98000
+      "feePaid": 98000,
+      "password": "12345678",
+      "username": "vikram.n"
     },
     {
       "id": "S013",
       "name": "Student 4",
-      "username": "student4",
-      "password": "12345678",
       "class": "TY-A",
       "rollNo": "304",
-      "feePaid": 98000
+      "feePaid": 98000,
+      "password": "12345678",
+      "username": "student4"
     },
     {
       "id": "S014",
       "name": "Student 5",
-      "username": "student5",
-      "password": "12345678",
       "class": "TY-A",
       "rollNo": "305",
-      "feePaid": 98000
+      "feePaid": 98000,
+      "password": "12345678",
+      "username": "student5"
     },
     {
       "id": "S011",
       "name": "Meera Desai",
-      "username": "meera.d",
-      "password": "12345678",
       "class": "B.S.c CS-A",
       "rollNo": "124",
-      "feePaid": 90000
+      "feePaid": 90000,
+      "password": "12345678",
+      "username": "meera.d"
     },
     {
       "id": "S012",
       "name": "Arjun Kale",
-      "username": "arjun.k",
-      "password": "12345678",
       "class": "B.S.c CS-A",
       "rollNo": "125",
-      "feePaid": 90000
+      "feePaid": 90000,
+      "password": "12345678",
+      "username": "arjun.k"
     }
   ],
   "locations": [
@@ -316,1679 +537,1624 @@
   "timetable": [
     {
       "id": "tt-1",
-      "className": "FY-A",
-      "subject": "Data Structures",
-      "facultyId": "F001",
-      "locationId": "loc-101",
       "date": "2026-03-16",
+      "endTime": "11:00",
+      "subject": "Data Structures",
+      "className": "FY-A",
+      "facultyId": "F001",
       "startTime": "10:00",
-      "endTime": "11:00"
+      "locationId": "loc-101"
     },
     {
       "id": "tt-2",
-      "className": "FY-A",
-      "subject": "Algorithms",
-      "facultyId": "F001",
-      "locationId": "loc-204",
       "date": "2026-03-16",
+      "endTime": "12:30",
+      "subject": "Algorithms",
+      "className": "FY-A",
+      "facultyId": "F001",
       "startTime": "11:30",
-      "endTime": "12:30"
+      "locationId": "loc-204"
     },
     {
       "id": "tt-3",
-      "className": "TY-A",
-      "subject": "Database Systems",
-      "facultyId": "F002",
-      "locationId": "lab-a",
       "date": "2026-03-16",
+      "endTime": "15:30",
+      "subject": "Database Systems",
+      "className": "TY-A",
+      "facultyId": "F002",
       "startTime": "14:00",
-      "endTime": "15:30"
+      "locationId": "lab-a"
     },
     {
       "id": "916f27f3-d6db-4eea-92a0-23113e212020",
-      "className": "B.S.c CS-A",
-      "subject": "Web Dev",
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "locationId": "lab-b",
       "date": "2026-03-18",
+      "endTime": "10:00",
+      "subject": "Web Dev",
+      "className": "B.S.c CS-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
       "startTime": "09:00",
-      "endTime": "10:00"
+      "locationId": "lab-b"
     },
     {
       "id": "ed1f8847-720f-49fe-bf8d-3f9a2dd4abe0",
-      "className": "B.S.c CS-A",
-      "subject": "Web Dev",
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "locationId": "loc-101",
       "date": "2026-03-15",
+      "endTime": "17:00",
+      "subject": "Web Dev",
+      "className": "B.S.c CS-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
       "startTime": "15:00",
-      "endTime": "17:00"
+      "locationId": "loc-101"
     },
     {
       "id": "9fd43312-96bd-4072-8827-c868a4d3ff0f",
-      "className": "B.S.c CS-A",
-      "subject": "Web Dev",
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "locationId": "lab-a",
       "date": "2026-03-15",
+      "endTime": "20:00",
+      "subject": "Web Dev",
+      "className": "B.S.c CS-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
       "startTime": "18:36",
-      "endTime": "20:00"
+      "locationId": "lab-a"
+    },
+    {
+      "id": "f15e5ce3-e530-444b-a16e-6ed769948149",
+      "date": "2026-03-19",
+      "endTime": "12:00",
+      "subject": "Database Systems",
+      "className": "B.S.c CS-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "startTime": "08:00",
+      "locationId": "lab-b"
+    },
+    {
+      "id": "3a05e023-8d9e-4911-9095-30ef76e81fff",
+      "date": "2026-03-19",
+      "endTime": "10:00",
+      "subject": "Software Engineering",
+      "className": "B.S.c CS-A",
+      "facultyId": "317f9d99-d18d-4029-8c1d-821be6e41f9c",
+      "startTime": "09:00",
+      "locationId": "lab-b"
+    },
+    {
+      "id": "9627398d-d116-4991-856b-6eafe28753cd",
+      "date": "2026-03-18",
+      "endTime": "13:01",
+      "subject": "Operating Systems",
+      "className": "Msc cs-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "startTime": "12:00",
+      "locationId": "loc-204"
     }
   ],
   "attendance": [
     {
       "id": "att-1",
-      "timetableEntryId": "tt-1",
-      "className": "FY-A",
-      "subject": "Data Structures",
-      "facultyId": "F001",
       "date": "2026-03-16",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "S001",
-          "status": "present"
+          "status": "present",
+          "studentId": "S001"
         },
         {
-          "studentId": "S002",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S002"
         },
         {
-          "studentId": "S005",
-          "status": "present"
+          "status": "present",
+          "studentId": "S005"
         },
         {
-          "studentId": "S006",
-          "status": "late"
+          "status": "late",
+          "studentId": "S006"
         }
-      ]
+      ],
+      "subject": "Data Structures",
+      "className": "FY-A",
+      "facultyId": "F001",
+      "punchInEnabled": false,
+      "timetableEntryId": "tt-1"
     },
     {
       "id": "att-2",
-      "timetableEntryId": "tt-2",
-      "className": "FY-A",
-      "subject": "Algorithms",
-      "facultyId": "F001",
       "date": "2026-03-16",
-      "punchInEnabled": true,
       "records": [
         {
-          "studentId": "S001",
-          "status": "present"
+          "status": "present",
+          "studentId": "S001"
         },
         {
-          "studentId": "S002",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S002"
         },
         {
-          "studentId": "S005",
-          "status": "present"
+          "status": "present",
+          "studentId": "S005"
         },
         {
-          "studentId": "S006",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S006"
         }
-      ]
+      ],
+      "subject": "Algorithms",
+      "className": "FY-A",
+      "facultyId": "F001",
+      "punchInEnabled": true,
+      "timetableEntryId": "tt-2"
     },
     {
       "id": "att-3",
-      "timetableEntryId": "tt-3",
-      "className": "TY-A",
-      "subject": "Database Systems",
-      "facultyId": "F002",
       "date": "2026-03-16",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "S004",
-          "status": "present"
+          "status": "present",
+          "studentId": "S004"
         },
         {
-          "studentId": "S009",
-          "status": "present"
+          "status": "present",
+          "studentId": "S009"
         },
         {
-          "studentId": "S010",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S010"
         }
-      ]
+      ],
+      "subject": "Database Systems",
+      "className": "TY-A",
+      "facultyId": "F002",
+      "punchInEnabled": false,
+      "timetableEntryId": "tt-3"
     },
     {
       "id": "att-4",
-      "timetableEntryId": "916f27f3-d6db-4eea-92a0-23113e212020",
-      "className": "B.S.c CS-A",
-      "subject": "Web Dev",
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
       "date": "2026-03-18",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528",
-          "status": "present"
+          "status": "present",
+          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528"
         },
         {
-          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844",
-          "status": "late"
+          "status": "late",
+          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844"
         },
         {
-          "studentId": "S011",
-          "status": "present"
+          "status": "present",
+          "studentId": "S011"
         },
         {
-          "studentId": "S012",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S012"
         }
-      ]
+      ],
+      "subject": "Web Dev",
+      "className": "B.S.c CS-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "punchInEnabled": false,
+      "timetableEntryId": "916f27f3-d6db-4eea-92a0-23113e212020"
     },
     {
       "id": "att-5",
-      "timetableEntryId": "ed1f8847-720f-49fe-bf8d-3f9a2dd4abe0",
-      "className": "B.S.c CS-A",
-      "subject": "Web Dev",
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
       "date": "2026-03-15",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528",
-          "status": "present"
+          "status": "present",
+          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528"
         },
         {
-          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844",
-          "status": "present"
+          "status": "present",
+          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844"
         },
         {
-          "studentId": "S011",
-          "status": "late"
+          "status": "late",
+          "studentId": "S011"
         },
         {
-          "studentId": "S012",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S012"
         }
-      ]
+      ],
+      "subject": "Web Dev",
+      "className": "B.S.c CS-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "punchInEnabled": false,
+      "timetableEntryId": "ed1f8847-720f-49fe-bf8d-3f9a2dd4abe0"
     },
     {
       "id": "att-6",
-      "timetableEntryId": "manual-sy-b-1",
-      "className": "SY-B",
-      "subject": "Software Engineering",
-      "facultyId": "F001",
       "date": "2026-03-14",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "S003",
-          "status": "present"
+          "status": "present",
+          "studentId": "S003"
         },
         {
-          "studentId": "S007",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S007"
         },
         {
-          "studentId": "S008",
-          "status": "present"
+          "status": "present",
+          "studentId": "S008"
         }
-      ]
+      ],
+      "subject": "Software Engineering",
+      "className": "SY-B",
+      "facultyId": "F001",
+      "punchInEnabled": false,
+      "timetableEntryId": "manual-sy-b-1"
     },
     {
       "id": "att-7",
-      "timetableEntryId": "manual-sy-b-2",
-      "className": "SY-B",
-      "subject": "Data Structures",
-      "facultyId": "F001",
       "date": "2026-03-12",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "S003",
-          "status": "late"
+          "status": "late",
+          "studentId": "S003"
         },
         {
-          "studentId": "S007",
-          "status": "absent"
+          "status": "absent",
+          "studentId": "S007"
         },
         {
-          "studentId": "S008",
-          "status": "present"
+          "status": "present",
+          "studentId": "S008"
         }
-      ]
+      ],
+      "subject": "Data Structures",
+      "className": "SY-B",
+      "facultyId": "F001",
+      "punchInEnabled": false,
+      "timetableEntryId": "manual-sy-b-2"
     },
     {
       "id": "0a303c41-c0cb-4218-9286-a61006050327",
-      "timetableEntryId": "9fd43312-96bd-4072-8827-c868a4d3ff0f",
-      "className": "B.S.c CS-A",
-      "subject": "Web Dev",
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
       "date": "2026-03-15",
-      "punchInEnabled": false,
       "records": [
         {
-          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528",
-          "status": "present"
+          "status": "present",
+          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528"
         },
         {
-          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844",
-          "status": "present"
+          "status": "present",
+          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844"
         },
         {
-          "studentId": "S011",
-          "status": "present"
+          "status": "present",
+          "studentId": "S011"
         },
         {
-          "studentId": "S012",
-          "status": "late"
+          "status": "late",
+          "studentId": "S012"
         }
-      ]
-    }
-  ],
-  "finance": {
-    "revenues": [
-      {
-        "id": "rev-1",
-        "title": "Exam Fees Collection",
-        "category": "exam-fees",
-        "amount": 165000,
-        "receivedOn": "2026-03-02",
-        "note": "Semester examination registrations"
-      },
-      {
-        "id": "rev-2",
-        "title": "Alumni Donation Drive",
-        "category": "donation",
-        "amount": 250000,
-        "receivedOn": "2026-03-07",
-        "note": "Donations pledged for digital classroom upgrade"
-      },
-      {
-        "id": "rev-3",
-        "title": "State Innovation Grant",
-        "category": "grant",
-        "amount": 400000,
-        "receivedOn": "2026-03-10",
-        "note": "Research lab modernization grant"
-      }
-    ],
-    "expenses": [
-      {
-        "id": "exp-1",
-        "title": "Faculty Salary - Dr. Sarah Smith",
-        "category": "salary",
-        "amount": 72000,
-        "paidTo": "Dr. Sarah Smith",
-        "dueDate": "2026-03-31",
-        "frequency": "monthly",
-        "note": "March salary payout"
-      },
-      {
-        "id": "exp-2",
-        "title": "Faculty Salary - Prof. John Doe",
-        "category": "salary",
-        "amount": 76000,
-        "paidTo": "Prof. John Doe",
-        "dueDate": "2026-03-31",
-        "frequency": "monthly",
-        "note": "March salary payout"
-      },
-      {
-        "id": "exp-3",
-        "title": "Faculty Salary - Ms Karishma Jain",
-        "category": "salary",
-        "amount": 68000,
-        "paidTo": "Ms Karishma Jain",
-        "dueDate": "2026-03-31",
-        "frequency": "monthly",
-        "note": "March salary payout"
-      },
-      {
-        "id": "exp-4",
-        "title": "Main Campus Electricity Bill",
-        "category": "utilities",
-        "amount": 54000,
-        "paidTo": "State Electricity Board",
-        "dueDate": "2026-03-20",
-        "frequency": "monthly",
-        "note": "Academic block and labs"
-      },
-      {
-        "id": "exp-5",
-        "title": "Internet and LMS Subscription",
-        "category": "operations",
-        "amount": 18500,
-        "paidTo": "CampusNet Services",
-        "dueDate": "2026-03-25",
-        "frequency": "monthly",
-        "note": "High-speed internet and learning suite"
-      },
-      {
-        "id": "exp-6",
-        "title": "Lab Maintenance Contract",
-        "category": "maintenance",
-        "amount": 32000,
-        "paidTo": "TechFix Engineering",
-        "dueDate": "2026-03-28",
-        "frequency": "quarterly",
-        "note": "Quarterly upkeep for labs"
-      }
-    ]
-  },
-  "notices": [
-    {
-      "id": "notice-1",
-      "title": "Internal Assessment Schedule",
-      "message": "Internal assessment for FY-A will be held on Monday in Classroom 101. Carry your lab journal.",
-      "authorId": "F001",
-      "authorName": "Dr. Sarah Smith",
-      "authorRole": "faculty",
-      "targetScope": "class",
-      "classNames": [
-        "FY-A"
-      ],
-      "subject": "Data Structures",
-      "createdAt": "2026-03-14T08:30:00.000Z",
-      "updatedAt": "2026-03-14T08:30:00.000Z"
-    },
-    {
-      "id": "notice-2",
-      "title": "Seminar Hall Maintenance",
-      "message": "All classes are informed that the seminar hall will remain closed today due to electrical maintenance.",
-      "authorId": "admin-1",
-      "authorName": "Kuldeep Yadav",
-      "authorRole": "admin",
-      "targetScope": "all",
-      "classNames": [],
-      "subject": "",
-      "createdAt": "2026-03-13T10:00:00.000Z",
-      "updatedAt": "2026-03-13T10:00:00.000Z"
-    },
-    {
-      "id": "notice-3",
-      "title": "Database Systems Practical",
-      "message": "TY-A students should submit the ER diagram before tomorrow's practical session.",
-      "authorId": "F002",
-      "authorName": "Prof. John Doe",
-      "authorRole": "faculty",
-      "targetScope": "class",
-      "classNames": [
-        "TY-A"
-      ],
-      "subject": "Database Systems",
-      "createdAt": "2026-03-12T12:15:00.000Z",
-      "updatedAt": "2026-03-12T12:15:00.000Z"
-    },
-    {
-      "id": "notice-4",
-      "title": "Exam Fee Deadline",
-      "message": "SY-B students must clear pending exam fees by Friday to avoid late charges.",
-      "authorId": "admin-1",
-      "authorName": "Kuldeep Yadav",
-      "authorRole": "admin",
-      "targetScope": "class",
-      "classNames": [
-        "SY-B"
-      ],
-      "subject": "",
-      "createdAt": "2026-03-11T09:00:00.000Z",
-      "updatedAt": "2026-03-11T09:00:00.000Z"
-    },
-    {
-      "id": "de3d5d95-89a9-4c4a-90e3-2673175db033",
-      "title": "Bring DS Journal",
-      "message": "everyone bring",
-      "authorId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "authorName": "Ahinsa Pimple",
-      "authorRole": "faculty",
-      "targetScope": "class",
-      "classNames": [
-        "B.S.c CS-A"
       ],
       "subject": "Web Dev",
-      "createdAt": "2026-03-15T14:16:08.158Z",
-      "updatedAt": "2026-03-15T14:16:08.158Z"
-    }
-  ],
-  "doubts": [
-    {
-      "id": "doubt-1",
-      "type": "doubt",
-      "title": "Need help with linked list assignment",
-      "message": "I am stuck in the insertion logic for the circular linked list question. Can you guide me?",
-      "studentId": "S001",
-      "studentName": "Alice Johnson",
-      "className": "FY-A",
-      "teacherId": "F001",
-      "teacherName": "Dr. Sarah Smith",
-      "subject": "Data Structures",
-      "createdAt": "2026-03-15T08:00:00.000Z"
-    },
-    {
-      "id": "doubt-2",
-      "type": "feedback",
-      "title": "Need more revision examples",
-      "message": "The last database practical was helpful. It would be great to get 2 more normalization examples before the next lab.",
-      "studentId": "S004",
-      "studentName": "Diana Prince",
-      "className": "TY-A",
-      "teacherId": "F002",
-      "teacherName": "Prof. John Doe",
-      "subject": "Database Systems",
-      "createdAt": "2026-03-15T09:30:00.000Z"
-    },
-    {
-      "id": "14c284e7-4705-4534-82e8-d43faa92eca9",
-      "type": "doubt",
-      "title": "Practical 1",
-      "message": "Please provide a guide to install Ubuntu WSL",
-      "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528",
-      "studentName": "Diksha Pimple",
       "className": "B.S.c CS-A",
-      "teacherId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "teacherName": "Ahinsa Pimple",
-      "subject": "Web Dev",
-      "createdAt": "2026-03-15T16:12:55.098Z"
-    }
-  ],
-  "resultSubjects": [
-    {
-      "id": "rs-0-1",
-      "courseCode": "DS501",
-      "courseTitle": "Distributed Systems",
-      "className": "TY-A",
-      "semester": 5,
-      "facultyId": "F002",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-0-2",
-      "courseCode": "CC502",
-      "courseTitle": "Cloud Computing",
-      "className": "TY-A",
-      "semester": 5,
-      "facultyId": "F001",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-0-3",
-      "courseCode": "AI503",
-      "courseTitle": "Artificial Intelligence",
-      "className": "TY-A",
-      "semester": 5,
       "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "credits": 3,
-      "published": true
+      "punchInEnabled": false,
+      "timetableEntryId": "9fd43312-96bd-4072-8827-c868a4d3ff0f"
     },
     {
-      "id": "rs-0-4",
-      "courseCode": "SPM504",
-      "courseTitle": "Software Project Management",
-      "className": "TY-A",
-      "semester": 5,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-0-5",
-      "courseCode": "BI505",
-      "courseTitle": "Business Intelligence",
-      "className": "TY-A",
-      "semester": 5,
+      "id": "b93a891d-8339-43bf-aa34-f7f314debc6a",
+      "date": "2026-03-19",
+      "records": [
+        {
+          "status": "absent",
+          "studentId": "f795562f-3fe9-4819-b30e-4eb8a754c528"
+        },
+        {
+          "status": "absent",
+          "studentId": "24ea82e8-438d-4ab6-b0bd-88520ba1d844"
+        },
+        {
+          "status": "absent",
+          "studentId": "S011"
+        },
+        {
+          "status": "absent",
+          "studentId": "S012"
+        }
+      ],
+      "subject": "Database Systems",
+      "className": "B.S.c CS-A",
       "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-0-6",
-      "courseCode": "MP506",
-      "courseTitle": "Mini Project",
-      "className": "TY-A",
-      "semester": 5,
-      "facultyId": "F002",
-      "credits": 4,
-      "published": true
-    },
-    {
-      "id": "rs-1",
-      "courseCode": "EITT601",
-      "courseTitle": "Embedded and IoT Technology",
-      "className": "TY-A",
-      "semester": 6,
-      "facultyId": "F002",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-2",
-      "courseCode": "NLP602",
-      "courseTitle": "Natural Language Processing",
-      "className": "TY-A",
-      "semester": 6,
-      "facultyId": "F001",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-3",
-      "courseCode": "WM603",
-      "courseTitle": "Web Mining",
-      "className": "TY-A",
-      "semester": 6,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-4",
-      "courseCode": "GPU604",
-      "courseTitle": "Game Programming with Unity",
-      "className": "TY-A",
-      "semester": 6,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "credits": 3,
-      "published": true
-    },
-    {
-      "id": "rs-5",
-      "courseCode": "RPA605",
-      "courseTitle": "Robotic Process Automation",
-      "className": "TY-A",
-      "semester": 6,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "credits": 3,
-      "published": false
-    },
-    {
-      "id": "rs-6",
-      "courseCode": "IFP606",
-      "courseTitle": "Internship / Field Project",
-      "className": "TY-A",
-      "semester": 6,
-      "facultyId": "F002",
-      "credits": 4,
-      "published": false
+      "punchInEnabled": false,
+      "timetableEntryId": "f15e5ce3-e530-444b-a16e-6ed769948149"
     }
   ],
   "resultMarks": [
     {
       "id": "rm-0-1",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-0-1",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-2",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-0-1",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 27,
       "totalMarks": 46,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 27,
+      "internalMarks": 19,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-3",
+      "grade": "F",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-0-1",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 21,
       "totalMarks": 37,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 21,
+      "internalMarks": 16,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-0-4",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-0-1",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 25,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 25,
+      "internalMarks": 20,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-5",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-0-1",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 23,
       "totalMarks": 40,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 23,
+      "internalMarks": 17,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-6",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-0-2",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 29,
       "totalMarks": 46,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 29,
+      "internalMarks": 17,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-7",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-0-2",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 26,
       "totalMarks": 44,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 26,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-8",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-0-2",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 41,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 19,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-9",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-0-2",
-      "internalMax": 20,
-      "internalMarks": 15,
-      "externalMax": 30,
-      "externalMarks": 30,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 30,
+      "internalMarks": 15,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-10",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-0-2",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-11",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-0-3",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 28,
       "totalMarks": 47,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 28,
+      "internalMarks": 19,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-12",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-0-3",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 26,
       "totalMarks": 46,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 26,
+      "internalMarks": 20,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-13",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-0-3",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 25,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 25,
+      "internalMarks": 17,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-14",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-0-3",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 27,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 27,
+      "internalMarks": 18,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-15",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-0-3",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 40,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 16,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-16",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-0-4",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-17",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-0-4",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 28,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 28,
+      "internalMarks": 17,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-18",
+      "grade": "F",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-0-4",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 20,
       "totalMarks": 39,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 20,
+      "internalMarks": 19,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-0-19",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-0-4",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 20,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-20",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-0-4",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 25,
       "totalMarks": 41,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 25,
+      "internalMarks": 16,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-21",
+      "grade": "C",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-0-5",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 27,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 27,
+      "internalMarks": 18,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-0-22",
+      "grade": "F",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-0-5",
-      "internalMax": 20,
-      "internalMarks": 15,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 39,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 15,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-0-23",
+      "grade": "F",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-0-5",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 39,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 17,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-0-24",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-0-5",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 43,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 19,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-25",
+      "grade": "D",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-0-5",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 23,
       "totalMarks": 41,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 23,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-0-26",
+      "grade": "C",
+      "credits": 4,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-0-6",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 25,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 4,
-      "creditGradePoints": 20,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 25,
+      "internalMarks": 20,
+      "creditGradePoints": 20
     },
     {
       "id": "rm-0-27",
+      "grade": "C",
+      "credits": 4,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-0-6",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 28,
       "totalMarks": 47,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 4,
-      "creditGradePoints": 20,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 28,
+      "internalMarks": 19,
+      "creditGradePoints": 20
     },
     {
       "id": "rm-0-28",
+      "grade": "D",
+      "credits": 4,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-0-6",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 40,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 4,
-      "creditGradePoints": 16,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 18,
+      "creditGradePoints": 16
     },
     {
       "id": "rm-0-29",
+      "grade": "D",
+      "credits": 4,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-0-6",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 44,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 4,
-      "creditGradePoints": 16,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 20,
+      "creditGradePoints": 16
     },
     {
       "id": "rm-0-30",
+      "grade": "D",
+      "credits": 4,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-0-6",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 26,
       "totalMarks": 43,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 4,
-      "creditGradePoints": 16,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 5,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 26,
+      "internalMarks": 17,
+      "creditGradePoints": 16
     },
     {
       "id": "rm-1",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-1",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 13,
       "totalMarks": 29,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 13,
+      "internalMarks": 16,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-2",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-1",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 21,
       "totalMarks": 39,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 21,
+      "internalMarks": 18,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-3",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-1",
-      "internalMax": 20,
-      "internalMarks": 14,
-      "externalMax": 30,
-      "externalMarks": 28,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 28,
+      "internalMarks": 14,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-4",
+      "grade": "C",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-1",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 26,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 26,
+      "internalMarks": 19,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-5",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-1",
-      "internalMax": 20,
-      "internalMarks": 15,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 39,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 15,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-6",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-2",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 27,
       "totalMarks": 44,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 27,
+      "internalMarks": 17,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-7",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-2",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 23,
       "totalMarks": 43,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 23,
+      "internalMarks": 20,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-8",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-2",
-      "internalMax": 20,
-      "internalMarks": 13,
-      "externalMax": 30,
-      "externalMarks": 20,
       "totalMarks": 33,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 20,
+      "internalMarks": 13,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-9",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-2",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 38,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 16,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-10",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-2",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 25,
       "totalMarks": 43,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "F001",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 25,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-11",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-3",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 43,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 19,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-12",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-3",
-      "internalMax": 20,
-      "internalMarks": 15,
-      "externalMax": 30,
-      "externalMarks": 20,
       "totalMarks": 35,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 20,
+      "internalMarks": 15,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-13",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-3",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 27,
       "totalMarks": 44,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 27,
+      "internalMarks": 17,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-14",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-3",
-      "internalMax": 20,
-      "internalMarks": 14,
-      "externalMax": 30,
-      "externalMarks": 21,
       "totalMarks": 35,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 21,
+      "internalMarks": 14,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-15",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-3",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 20,
       "totalMarks": 38,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": true,
-      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 20,
+      "internalMarks": 18,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-16",
+      "grade": "C",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S004",
       "subjectId": "rs-4",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 28,
       "totalMarks": 46,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 3,
-      "creditGradePoints": 15,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 28,
+      "internalMarks": 18,
+      "creditGradePoints": 15
     },
     {
       "id": "rm-17",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S009",
       "subjectId": "rs-4",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 26,
       "totalMarks": 42,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 26,
+      "internalMarks": 16,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-18",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S010",
       "subjectId": "rs-4",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 41,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 19,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-19",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S013",
       "subjectId": "rs-4",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 23,
       "totalMarks": 43,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 23,
+      "internalMarks": 20,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-20",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
       "studentId": "S014",
       "subjectId": "rs-4",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 41,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": true,
-      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 17,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-21",
+      "grade": "D",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": false,
       "studentId": "S004",
       "subjectId": "rs-5",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 22,
       "totalMarks": 40,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 3,
-      "creditGradePoints": 12,
-      "published": false,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 22,
+      "internalMarks": 18,
+      "creditGradePoints": 12
     },
     {
       "id": "rm-22",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": false,
       "studentId": "S009",
       "subjectId": "rs-5",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 18,
       "totalMarks": 34,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": false,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 18,
+      "internalMarks": 16,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-23",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": false,
       "studentId": "S010",
       "subjectId": "rs-5",
-      "internalMax": 20,
-      "internalMarks": 14,
-      "externalMax": 30,
-      "externalMarks": 17,
       "totalMarks": 31,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": false,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 17,
+      "internalMarks": 14,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-24",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": false,
       "studentId": "S013",
       "subjectId": "rs-5",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 20,
       "totalMarks": 39,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": false,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 20,
+      "internalMarks": 19,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-25",
+      "grade": "F",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": false,
       "studentId": "S014",
       "subjectId": "rs-5",
-      "internalMax": 20,
-      "internalMarks": 17,
-      "externalMax": 30,
-      "externalMarks": 21,
       "totalMarks": 38,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 3,
-      "creditGradePoints": 0,
-      "published": false,
-      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 21,
+      "internalMarks": 17,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-26",
+      "grade": "C",
+      "credits": 4,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": false,
       "studentId": "S004",
       "subjectId": "rs-6",
-      "internalMax": 20,
-      "internalMarks": 19,
-      "externalMax": 30,
-      "externalMarks": 26,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 4,
-      "creditGradePoints": 20,
-      "published": false,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 26,
+      "internalMarks": 19,
+      "creditGradePoints": 20
     },
     {
       "id": "rm-27",
+      "grade": "F",
+      "credits": 4,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": false,
       "studentId": "S009",
       "subjectId": "rs-6",
-      "internalMax": 20,
-      "internalMarks": 18,
-      "externalMax": 30,
-      "externalMarks": 20,
       "totalMarks": 38,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 4,
-      "creditGradePoints": 0,
-      "published": false,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 20,
+      "internalMarks": 18,
+      "creditGradePoints": 0
     },
     {
       "id": "rm-28",
+      "grade": "D",
+      "credits": 4,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": false,
       "studentId": "S010",
       "subjectId": "rs-6",
-      "internalMax": 20,
-      "internalMarks": 16,
-      "externalMax": 30,
-      "externalMarks": 24,
       "totalMarks": 40,
-      "grade": "D",
+      "externalMax": 30,
       "gradePoints": 4,
-      "credits": 4,
-      "creditGradePoints": 16,
-      "published": false,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 24,
+      "internalMarks": 16,
+      "creditGradePoints": 16
     },
     {
       "id": "rm-29",
+      "grade": "C",
+      "credits": 4,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": false,
       "studentId": "S013",
       "subjectId": "rs-6",
-      "internalMax": 20,
-      "internalMarks": 20,
-      "externalMax": 30,
-      "externalMarks": 25,
       "totalMarks": 45,
-      "grade": "C",
+      "externalMax": 30,
       "gradePoints": 5,
-      "credits": 4,
-      "creditGradePoints": 20,
-      "published": false,
-      "facultyId": "F002",
-      "semester": 6,
-      "className": "TY-A"
+      "internalMax": 20,
+      "externalMarks": 25,
+      "internalMarks": 20,
+      "creditGradePoints": 20
     },
     {
       "id": "rm-30",
+      "grade": "F",
+      "credits": 4,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": false,
       "studentId": "S014",
       "subjectId": "rs-6",
-      "internalMax": 20,
-      "internalMarks": 15,
-      "externalMax": 30,
-      "externalMarks": 19,
       "totalMarks": 34,
-      "grade": "F",
+      "externalMax": 30,
       "gradePoints": 0,
-      "credits": 4,
-      "creditGradePoints": 0,
-      "published": false,
+      "internalMax": 20,
+      "externalMarks": 19,
+      "internalMarks": 15,
+      "creditGradePoints": 0
+    }
+  ],
+  "academicYear": {
+    "id": "ay-1",
+    "year": "2025-2026",
+    "classes": [
+      {
+        "id": "cls-1",
+        "name": "First Year (FY)",
+        "subjects": [
+          "Data Structures",
+          "Algorithms",
+          "Web Service"
+        ],
+        "divisions": [
+          "A",
+          "B",
+          "C"
+        ],
+        "facultyId": "F001",
+        "totalStudents": 180
+      },
+      {
+        "id": "cls-2",
+        "name": "Second Year (SY)",
+        "subjects": [
+          "Database Systems",
+          "Software Engineering"
+        ],
+        "divisions": [
+          "A",
+          "B"
+        ],
+        "facultyId": "F002",
+        "totalStudents": 120
+      },
+      {
+        "id": "cls-3",
+        "name": "Third Year (TY)",
+        "subjects": [
+          "Web Dev",
+          "Database Systems"
+        ],
+        "divisions": [
+          "A",
+          "B"
+        ],
+        "facultyId": "F001",
+        "totalStudents": 115
+      },
+      {
+        "id": "979275c3-03f4-4d80-acaf-8d6eadccd1fa",
+        "name": "B.S.c CS",
+        "subjects": [
+          "Database Systems",
+          "Web Dev",
+          "Software Engineering"
+        ],
+        "divisions": [
+          "A"
+        ],
+        "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+        "totalStudents": 100
+      },
+      {
+        "id": "a91ab4d2-835c-4a2f-833e-113bddc5c61c",
+        "name": "Msc cs",
+        "subjects": [
+          "Operating Systems"
+        ],
+        "divisions": [
+          "A"
+        ],
+        "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+        "totalStudents": 20
+      }
+    ],
+    "isActive": true
+  },
+  "resultSubjects": [
+    {
+      "id": "rs-0-1",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
       "facultyId": "F002",
+      "published": true,
+      "courseCode": "DS501",
+      "courseTitle": "Distributed Systems"
+    },
+    {
+      "id": "rs-0-2",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
+      "courseCode": "CC502",
+      "courseTitle": "Cloud Computing"
+    },
+    {
+      "id": "rs-0-3",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
+      "courseCode": "AI503",
+      "courseTitle": "Artificial Intelligence"
+    },
+    {
+      "id": "rs-0-4",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
+      "courseCode": "SPM504",
+      "courseTitle": "Software Project Management"
+    },
+    {
+      "id": "rs-0-5",
+      "credits": 3,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": true,
+      "courseCode": "BI505",
+      "courseTitle": "Business Intelligence"
+    },
+    {
+      "id": "rs-0-6",
+      "credits": 4,
+      "semester": 5,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
+      "courseCode": "MP506",
+      "courseTitle": "Mini Project"
+    },
+    {
+      "id": "rs-1",
+      "credits": 3,
       "semester": 6,
-      "className": "TY-A"
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": true,
+      "courseCode": "EITT601",
+      "courseTitle": "Embedded and IoT Technology"
+    },
+    {
+      "id": "rs-2",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F001",
+      "published": true,
+      "courseCode": "NLP602",
+      "courseTitle": "Natural Language Processing"
+    },
+    {
+      "id": "rs-3",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "published": true,
+      "courseCode": "WM603",
+      "courseTitle": "Web Mining"
+    },
+    {
+      "id": "rs-4",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "ef6a9e70-cc86-40b4-aa19-3ebe5b1a04ea",
+      "published": true,
+      "courseCode": "GPU604",
+      "courseTitle": "Game Programming with Unity"
+    },
+    {
+      "id": "rs-5",
+      "credits": 3,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "5fdcc51f-4644-4498-bd42-8776188f3965",
+      "published": false,
+      "courseCode": "RPA605",
+      "courseTitle": "Robotic Process Automation"
+    },
+    {
+      "id": "rs-6",
+      "credits": 4,
+      "semester": 6,
+      "className": "TY-A",
+      "facultyId": "F002",
+      "published": false,
+      "courseCode": "IFP606",
+      "courseTitle": "Internship / Field Project"
+    }
+  ],
+  "studyMaterials": [
+    {
+      "id": "284b716c-fc84-4e4b-ad08-f5f1fe47e219",
+      "title": "Notes for AI",
+      "description": "",
+      "className": "B.S.c CS-A",
+      "subject": "Web Dev",
+      "uploadedById": "7258a59b-b5d3-40ef-ac9a-11610f194053",
+      "uploadedByName": "Ahinsa Pimple",
+      "uploadedByRole": "faculty",
+      "fileName": "Cambridge_ArtificialIntelligence.pdf",
+      "filePath": "materials/b-s-c-cs-a/web-dev/284b716c-fc84-4e4b-ad08-f5f1fe47e219-cambridge-artificialintelligence.pdf",
+      "mimeType": "application/pdf",
+      "fileSize": 4590410,
+      "createdAt": "2026-04-03T08:38:18.706Z"
     }
   ]
 }

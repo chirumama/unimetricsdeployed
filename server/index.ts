@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { randomUUID } from 'crypto';
+import multer from 'multer';
 import {
   readDB,
   writeDB,
@@ -18,11 +19,19 @@ import {
   type DoubtFeedback,
   type ResultSubject,
   type ResultMark,
+  type StudyMaterial,
 } from './db.js';
+import { createSignedStorageUrl, getStorageBucketName, removeFileFromStorage, uploadFileToStorage } from './supabase.js';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 15 * 1024 * 1024,
+  },
+});
 
 let db: DB = await readDB();
 
@@ -57,6 +66,75 @@ function sanitizeFaculty(faculty: Faculty) {
 function sanitizeStudent(student: Student) {
   const { password, ...rest } = student;
   return rest;
+}
+
+function findAuthUser(role: 'admin' | 'faculty' | 'student', userId: string) {
+  if (role === 'admin') {
+    return userId === ADMIN_CREDENTIALS.id
+      ? {
+          id: ADMIN_CREDENTIALS.id,
+          name: ADMIN_CREDENTIALS.name,
+          role: ADMIN_CREDENTIALS.role,
+          classes: [] as string[],
+          subjects: [] as string[],
+        }
+      : null;
+  }
+
+  if (role === 'faculty') {
+    const faculty = db.faculty.find((item) => item.id === userId);
+    return faculty
+      ? {
+          id: faculty.id,
+          name: faculty.name,
+          role: 'faculty' as const,
+          classes: faculty.classes,
+          subjects: faculty.subjects,
+        }
+      : null;
+  }
+
+  const student = db.students.find((item) => item.id === userId);
+  return student
+    ? {
+        id: student.id,
+        name: student.name,
+        role: 'student' as const,
+        classes: [student.class],
+        subjects: [] as string[],
+      }
+    : null;
+}
+
+function canAccessMaterial(material: StudyMaterial, role: 'admin' | 'faculty' | 'student', userId: string) {
+  const user = findAuthUser(role, userId);
+  if (!user) {
+    return false;
+  }
+
+  if (role === 'admin') {
+    return true;
+  }
+
+  if (role === 'faculty') {
+    return material.uploadedById === user.id || (user.classes.includes(material.className) && user.subjects.includes(material.subject));
+  }
+
+  return user.classes.includes(material.className);
+}
+
+function buildMaterialStoragePath(materialId: string, className: string, subject: string, fileName: string) {
+  const safeSegment = (value: string) =>
+    value
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+  const extension = fileName.includes('.') ? fileName.split('.').pop() : 'bin';
+  const baseName = fileName.replace(/\.[^/.]+$/, '');
+
+  return `materials/${safeSegment(className)}/${safeSegment(subject)}/${materialId}-${safeSegment(baseName)}.${extension}`;
 }
 
 app.get('/api/health', (req, res) => {
@@ -724,6 +802,179 @@ app.post('/api/doubts', async (req, res) => {
   db.doubts.push(entry);
   await persist();
   res.status(201).json(entry);
+});
+
+// Study materials
+app.get('/api/materials', (req, res) => {
+  const role = req.query.role;
+  const userId = req.query.userId;
+
+  if (role !== 'admin' && role !== 'faculty' && role !== 'student') {
+    return res.status(400).json({ error: 'role must be admin, faculty, or student' });
+  }
+
+  if (typeof userId !== 'string' || !userId) {
+    return res.status(400).json({ error: 'userId is required' });
+  }
+
+  const user = findAuthUser(role, userId);
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+
+  const materials = db.studyMaterials
+    .filter((material) => {
+      if (role === 'admin') {
+        return true;
+      }
+
+      if (role === 'faculty') {
+        return material.uploadedById === user.id;
+      }
+
+      return user.classes.includes(material.className);
+    })
+    .sort((first, second) => second.createdAt.localeCompare(first.createdAt));
+
+  res.json(materials);
+});
+
+app.post('/api/materials', upload.single('file'), async (req, res) => {
+  const { title, description, className, subject, uploadedById, uploadedByRole } = req.body as Record<string, string>;
+  const file = req.file;
+
+  if (!title || !className || !subject || !uploadedById || !uploadedByRole) {
+    return res.status(400).json({ error: 'title, className, subject, uploadedById, and uploadedByRole are required' });
+  }
+
+  if (uploadedByRole !== 'admin' && uploadedByRole !== 'faculty') {
+    return res.status(400).json({ error: 'uploadedByRole must be admin or faculty' });
+  }
+
+  if (!file) {
+    return res.status(400).json({ error: 'A file is required' });
+  }
+
+  const uploader = findAuthUser(uploadedByRole, uploadedById);
+  if (!uploader || (uploader.role !== 'admin' && uploader.role !== 'faculty')) {
+    return res.status(404).json({ error: 'Uploader not found' });
+  }
+
+  if (
+    uploader.role === 'faculty' &&
+    (!uploader.classes.includes(className) || !uploader.subjects.includes(subject))
+  ) {
+    return res.status(403).json({ error: 'Faculty can upload only for their assigned class and subject' });
+  }
+
+  const allowedMimeTypes = new Set([
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.ms-powerpoint',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'image/png',
+    'image/jpeg',
+    'image/webp',
+    'text/plain',
+  ]);
+
+  if (!allowedMimeTypes.has(file.mimetype)) {
+    return res.status(400).json({ error: 'Unsupported file type' });
+  }
+
+  try {
+    const materialId = randomUUID();
+    const filePath = buildMaterialStoragePath(materialId, className, subject, file.originalname);
+
+    await uploadFileToStorage(filePath, file.buffer, file.mimetype);
+
+    const material: StudyMaterial = {
+      id: materialId,
+      title,
+      description: description ?? '',
+      className,
+      subject,
+      uploadedById,
+      uploadedByName: uploader.name,
+      uploadedByRole,
+      fileName: file.originalname,
+      filePath,
+      mimeType: file.mimetype,
+      fileSize: file.size,
+      createdAt: new Date().toISOString(),
+    };
+
+    db.studyMaterials.push(material);
+    await persist();
+    res.status(201).json(material);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to upload file';
+    res.status(500).json({ error: message });
+  }
+});
+
+app.get('/api/materials/:id/access-url', async (req, res) => {
+  const role = req.query.role;
+  const userId = req.query.userId;
+  const material = db.studyMaterials.find((item) => item.id === req.params.id);
+
+  if (role !== 'admin' && role !== 'faculty' && role !== 'student') {
+    return res.status(400).json({ error: 'role must be admin, faculty, or student' });
+  }
+
+  if (typeof userId !== 'string' || !userId) {
+    return res.status(400).json({ error: 'userId is required' });
+  }
+
+  if (!material) {
+    return res.status(404).json({ error: 'Material not found' });
+  }
+
+  if (!canAccessMaterial(material, role, userId)) {
+    return res.status(403).json({ error: 'You do not have access to this material' });
+  }
+
+  try {
+    const signedUrl = await createSignedStorageUrl(material.filePath);
+    res.json({ signedUrl, bucket: getStorageBucketName() });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to create access URL';
+    res.status(500).json({ error: message });
+  }
+});
+
+app.delete('/api/materials/:id', async (req, res) => {
+  const { userId, role } = req.body as { userId?: string; role?: 'admin' | 'faculty' };
+  const index = db.studyMaterials.findIndex((item) => item.id === req.params.id);
+
+  if (!userId || (role !== 'admin' && role !== 'faculty')) {
+    return res.status(400).json({ error: 'userId and role are required' });
+  }
+
+  if (index === -1) {
+    return res.status(404).json({ error: 'Material not found' });
+  }
+
+  const material = db.studyMaterials[index];
+  const requester = findAuthUser(role, userId);
+  if (!requester) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+
+  if (role === 'faculty' && material.uploadedById !== requester.id) {
+    return res.status(403).json({ error: 'Faculty can delete only their own materials' });
+  }
+
+  try {
+    await removeFileFromStorage(material.filePath);
+    db.studyMaterials.splice(index, 1);
+    await persist();
+    res.status(204).send();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to delete material';
+    res.status(500).json({ error: message });
+  }
 });
 
 // Results & marks
